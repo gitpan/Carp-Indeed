@@ -9,11 +9,9 @@ require Exporter;
 our @ISA = qw(Exporter);
 our @EXPORT_OK = qw(warn die);
 
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
-require Carp;
-
-$Carp::Verbose = 1;
+use Carp qw(verbose);
 
 sub import {
   my $pkg = shift;
@@ -60,13 +58,13 @@ user besides the developer (and neither to her/him after a little
 lapse of time). Printing stack traces all around is usually felt 
 as a lousy programming style by a programmer who did not have the time
 or guts to write decent code. That's why Perl mature code 
-usually employs the Carp module to tell of errors from the 
+usually employs the C<Carp> module to tell of errors from the 
 perspective of the caller: if an error was found, it should belong
 to the caller as the library code was made bullet-proof.
 (That's a summary of what the author thinks about "the Java 
 paradigm to print stack traces").
 
-Here is how a stack backtrace produced by Carp::Indeed looks for
+Here is how a stack backtrace produced by C<Carp::Indeed> looks for
 a fictional script:
 
   Exception: event not implemented at workshop/events.pl line 26
@@ -79,13 +77,13 @@ a fictional script:
 
 In the implementation, the C<Carp> module was used.
 C<Carp> is a Perl module as old as Perl 5 (don't believe me,
-ask L<corelist>). It has
+ask L<Module::CoreList>). It has
 an option to print errors (from the perspective of caller) 
 with stack backtrace. With a few lines of codes, this module
 illustrates how to make C<warn()> and C<die()> noisy as well.
 
 This is done by overriding the builtin functions C<warn> and C<die>
-globally. Just as L<perlsub> told us not to do lightly.
+globally. Just as L<perlsub> told us B<not to> do lightly.
 
 =head2 EXPORT
 
@@ -94,10 +92,8 @@ This module exports I<globally> its own versions of C<warn> and C<die>.
 =head1 AN ASIDE
 
 If you take a look at some dictionary (I have used
-
-  http://dictionary.reference.com/search?q=carp
-
-for no good reason), you find out that I<carp> means
+http://dictionary.reference.com/search for no good reason), 
+you find out that I<carp> means
 
   To find fault in a disagreeable way; complain fretfully.
 
@@ -115,7 +111,7 @@ And then there is I<cluck> and I<confess>:
   To admit or acknowledge something damaging or inconvenient to oneself
 
 These are the terminology introduced by the symbols
-exportable by C<Carp>.
+exportable by L<Carp>.
 And then you realize you are being annoying when 
 carping, croaking, warning, dying, clucking, confessing.
 So don't do it all the time, nobody will tolerate and
@@ -124,7 +120,7 @@ you will be all alone writing code that makes you boring
 
 =head1 RANT
 
-This is a rant on the Acme::JavaTrace module where
+This is a rant on the L<Acme::JavaTrace> module where
 the author (Sébastien Aperghis-Tramoni - saper) gave us some 
 pearls of wisdom like
 
@@ -138,7 +134,7 @@ and
   in the Java environment is included in the trace. 
 
 It was probably meant as a joke. He even released a new module
-called Devel::SimpleTrace with the same code and fewer flame
+called L<Devel::SimpleTrace> with the same code and fewer flame
 comments on docs.
 
 The upsides of all this are:
@@ -147,27 +143,27 @@ The upsides of all this are:
 
 =item *
 
-could it be a good idea to support another formats for stack backtraces?
+Could it be a good idea to support another formats for stack backtraces?
 Java programmers and others could feel more comfortable in addition to
 the liberating experience of a cooler programming language.
 
 =item *
 
-maybe it is already time to equip C<Carp> with additional support for
+Maybe it is already time to equip C<Carp> with additional support for
 alternate ways of showing and dumping arguments.
 
 =item *
 
-it may be time as well to add Carp support to handle exception objects
+It may be time as well to add Carp support to handle exception objects.
 
 =item *
 
-at such occasions, one finds that more research into the core Perl
-library worths a lot
+At such occasions, one finds that more research into the core Perl
+library is always worth.
 
 =item *
 
-sometimes one realizes that knowing Perl is like doing maths. You
+Sometimes one realizes that knowing Perl is like doing maths. You
 don't prove anything by showing that two cases satisfy the proposed
 solution. In the same vein, just because you didn't find a Perl module
 with the functionality you need, it does not mean it was not written
@@ -175,7 +171,7 @@ yet.
 
 =item *
 
-documentation in stupid modules can always be too long
+Documentation in stupid modules can always be too long.
 
 =back
 
@@ -194,7 +190,7 @@ L<Carp>
 
 =item *
 
-L<Java::AcmeTrace>, by saper
+L<Acme::JavaTrace>, by saper
 
 =item *
 
@@ -214,13 +210,14 @@ Every (un)deserving module has its own pet bugs.
 =item *
 
 When this module is in effect, the use of C<carp> and C<croak>
-should be verbose too. This is not working yet.
+is verbose too. But I am not convinced this is working as it
+should yet.
 
 =item *
 
 This module does not play well with other modules which fusses
 around with C<warn>, C<die>, C<$SIG{'__WARN__'}>,
-C<$SIG{'__DIE__' }>.
+C<$SIG{'__DIE__'}>.
 
 =item *
 

@@ -5,13 +5,14 @@ use ExtUtils::MakeMaker;
 
 WriteMakefile(
     NAME              => 'Carp::Indeed',
-    VERSION_FROM      => 'lib/Carp/Indeed.pm', # finds $VERSION
+    VERSION_FROM      => 'lib/Carp/Indeed.pm',
     PREREQ_PM         => {
         Carp => 0,
     },
+	PL_FILES          => {},
     ($] >= 5.005 ?
       (ABSTRACT_FROM  => 'lib/Carp/Indeed.pm', 
        AUTHOR         => 'Adriano Ferreira <ferreira@cpan.org>') : (),
-       NO_META        => 0
+       NO_META        => 1
       ),
 );

@@ -1,5 +1,12 @@
 Revision history for Perl extension Carp::Indeed.
 
+0.02  Thu Aug  5 2005
+        - POD minor fixes 
+        - I should have said "NO_META => 1" in Makefile.PL instead
+	  of "NO_META => 0"
+        - "use Carp qw(verbose)" instead of "require Carp; $Carp::Verbose=1"
+	  was enough for carp() and croak() to be verbose too
+
 0.01  Thu Aug  4 2005
         - first realease to CPAN
 
