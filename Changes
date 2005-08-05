@@ -1,0 +1,9 @@
+Revision history for Perl extension Carp::Indeed.
+
+0.01  Thu Aug  4 2005
+        - first realease to CPAN
+
+0.00  Thu Aug  4 13:07:27 2005
+        - original version; created by h2xs 1.23 with options
+                -AX -n Carp::Indeed
+
