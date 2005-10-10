@@ -1,7 +1,7 @@
 ---
 # http://module-build.sourceforge.net/META-spec.html
 name:         Carp-Indeed
-version:      0.02
+version:      0.03
 version_from: lib/Carp/Indeed.pm
 author:
   - Adriano Ferreira <ferreira@cpan.org>

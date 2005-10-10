@@ -9,23 +9,32 @@ require Exporter;
 our @ISA = qw(Exporter);
 our @EXPORT_OK = qw(warn die);
 
-our $VERSION = '0.02';
+our $VERSION = '0.03';
 
-use Carp qw(verbose);
+require Carp;
+$Carp::Verbose = 1; # makes carp() cluck and croak() confess
 
-sub import {
-  my $pkg = shift;
-  $pkg->export('CORE::GLOBAL', 'warn', 'die');
+sub _warn {
+  if ($_[-1] =~ /\n$/s) {
+    my $arg = pop @_;
+    $arg =~ s/ at .*? line .*?\n$//s;
+    push @_, $arg;
+  }
+  warn &Carp::longmess;
 }
 
-sub warn {
-  local $Carp::CarpLevel = 1;
-  &Carp::carp;
+sub _die {
+  if ($_[-1] =~ /\n$/s) {
+    my $arg = pop @_;
+    $arg =~ s/ at .*? line .*?\n$//s;
+    push @_, $arg;
+  }
+  die &Carp::longmess;
 }
 
-sub die {
-  local $Carp::CarpLevel = 1;
-  &Carp::croak;
+BEGIN {
+  $SIG{__DIE__} = \&_die;
+  $SIG{__WARN__} = \&_warn;
 }
 
 1;

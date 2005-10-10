@@ -6,14 +6,14 @@ BEGIN { use_ok('Carp::Indeed') };
 use lib qw(t/lib);
 use File::Slurp qw(slurp);
 
-my $script = 't/002script.pl';
-my $outfile = 't/002.out';
+my $script = 't/003script.pl';
+my $outfile = 't/034.out';
 
 system "$^X -Iblib/lib -MCarp::Indeed $script $outfile ";
 
-my $expected = "Beware! at $script line 6\n" .
-"\tA::f() called at $script line 10\n" .
-"\tA::g() called at $script line 23\n";
+my $expected = "Can't use an undefined value as an ARRAY reference at $script line 8\n" .
+"\tA::f() called at $script line 12\n" .
+"\tA::g() called at $script line 25\n";
 
 my $output = slurp $outfile;
 
