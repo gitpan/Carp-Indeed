@@ -17,9 +17,6 @@ my $expected = "Beware! at $script line 6\n" .
 
 my $output = slurp $outfile;
 
-use YAML;
-#diag(Dump { output => $output, expected => $expected });
-
 is($output, $expected);
 
 END { 

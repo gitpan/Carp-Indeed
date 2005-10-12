@@ -1,5 +1,9 @@
 Revision history for Perl extension Carp::Indeed.
 
+0.04  Wed Oct 12 2005
+        - fixed mistakes at META.yml and t/002basic.t
+        - shortened documentation
+
 0.03  Mon Oct 10 2005
         - now using $SIG{__DIE__} and $SIG{__WARN__} to catch 
           perl generated warnings and errors as well 
