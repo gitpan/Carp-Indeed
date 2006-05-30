@@ -5,11 +5,11 @@ use 5.006;
 use strict;
 use warnings;
 
-require Exporter;
-our @ISA = qw(Exporter);
-our @EXPORT_OK = qw(warn die);
+#require Exporter;
+#our @ISA = qw(Exporter);
+#our @EXPORT_OK = qw(warn die);
 
-our $VERSION = '0.04';
+our $VERSION = '0.05';
 
 use Carp qw(verbose); # makes carp() cluck and croak() confess
 

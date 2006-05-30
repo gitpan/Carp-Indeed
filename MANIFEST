@@ -4,12 +4,8 @@ MANIFEST
 README
 
 t/001use.t
-t/002basic.t
-t/002script.pl
-t/003perl.t
-t/003script.pl
+t/010simple.t
 t/090pod.t
-t/lib/File/Slurp.pm
 
 Indeed.pm
 META.yml                                 Module meta-data (added by MakeMaker)

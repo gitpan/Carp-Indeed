@@ -1,6 +1,13 @@
 Revision history for Perl extension Carp::Indeed.
 
-0.04  Wed Oct 12 2005
+    $Id: Changes 214 2006-05-30 18:35:30Z me $
+
+0.05  Tue May 30 2006
+        - remove @EXPORT_OK and all use of Exporter (which was good
+          for nothing) - a suggestion by Yuval Kogman via CPAN ratings
+        - simplified tests with Test::Base
+
+0.04  Wed Oct 12 2005 (r198, tag)
         - fixed mistakes at META.yml and t/002basic.t
         - shortened documentation
 
