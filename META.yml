@@ -1,17 +1,13 @@
 --- #YAML:1.0
 name:                Carp-Indeed
-version:             0.05
-abstract:            Warns and dies noisily with stack backtraces
+version:             0.06
+abstract:            Deprecate - Warns and dies noisily with stack backtraces
 license:             perl
 generated_by:        ExtUtils::MakeMaker version 6.30_01
 author:              Adriano R. Ferreira <ferreira@cpan.org>
 distribution_type:   module
 requires:     
-    Carp:                          0
-    Test::More:                    0
+    Carp::Always:                  0
 meta-spec:
     url: <http://module-build.sourceforge.net/META-spec-new.html>;
     version: 1.1
-recommends:
-    Test::Pod:                     1.18
-    Test::Base:                    0
