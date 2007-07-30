@@ -6,17 +6,18 @@ my $EUMM_VERSION = eval $ExtUtils::MakeMaker::VERSION;
 
 WriteMakefile(
     NAME              => 'Carp::Indeed',
-    VERSION           => '0.06',
+    VERSION_FROM      => 'lib/Carp/Indeed.pm',
     PREREQ_PM         => {
-        'Carp::Always' => 0,
+        'Carp::Always'    => 0,
+        'Test::More'      => 0,
     },
-    PL_FILES          => {},
     ($] >= 5.005 ? (
-        'ABSTRACT' => 'Deprecate - Warns and dies noisily with stack backtraces',
+        'ABSTRACT_FROM' => 'lib/Carp/Indeed.pm',
         'AUTHOR'        => 'Adriano R. Ferreira <ferreira@cpan.org>'
-    ) : ()),
-    ($EUMM_VERSION >= 6.30_01 ? (
+    ) : () ),
+    ($EUMM_VERSION >= 6.31 ? (
         LICENSE => 'perl', 
-    ) :())
+        EXTRA_META => "recommends:\n    Test::Pod:                     1.18\n    Test::Pod::Coverage:           1.04\n",
+    ) :() )
 
 );

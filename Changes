@@ -1,6 +1,17 @@
 Revision history for Perl extension Carp::Indeed.
 
-    $Id: Changes 664 2006-08-22 20:15:19Z me $
+    $Id: Changes 1478 2007-07-30 14:26:05Z me $
+
+0.09  Mon Jul 30 2007
+        - the distribution was ressurected for some reasons:
+          * using 'abstract' in Makefile.PL and META.yml does not
+            show right in search.cpan
+          * Carp/Indeed.pm moves from Carp-Always back to where it
+            belongs and now can rest in peace
+          * Carp/Indeed.pm takes back its own version 
+            ("use Carp::Always; $VERSION = Carp::Always::VERSION"
+            may work right from my machine, but not from CPAN)
+        - silly tests are back
 
 0.06  Tue Aug 22 2006
         - this distribution is deprecated - use Carp-Always instead

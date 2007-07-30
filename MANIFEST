@@ -1,4 +1,9 @@
 Changes
 Makefile.PL
 MANIFEST
+
+lib/Carp/Indeed.pm
+t/001use.t
+t/098pod-coverage.t
+t/099pod.t
 META.yml                                 Module meta-data (added by MakeMaker)
