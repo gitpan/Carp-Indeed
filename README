@@ -1,0 +1,34 @@
+Carp-Indeed version 0.10
+========================
+
+The Carp-Indeed distribution was superseded by Carp-Always.
+You find it here:
+
+  http://search.cpan.org/dist/Carp-Always/
+
+There you find the module Carp::Always which you should use.
+Carp::Indeed is the former name of Carp::Always and is 
+currently deprecate but will be here
+as a courtesy to my user base - approximately 
+000_000_1 user(s): me :)
+
+This distribution is here as a redirection to people who
+have met this dist some time ago 
+and then remembered it could be useful to them. 
+
+INSTALLATION
+
+Never mind install this distribution. Go after Carp-Always.
+
+DEPENDENCIES
+
+You need 
+
+  Carp::Always
+
+COPYRIGHT AND LICENCE
+
+Copyright (C) 2005-2007 by Adriano R. Ferreira
+
+This library is free software; you can redistribute it and/or modify
+it under the same terms as Perl itself.

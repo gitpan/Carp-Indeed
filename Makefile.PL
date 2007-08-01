@@ -8,6 +8,7 @@ WriteMakefile(
     NAME              => 'Carp::Indeed',
     VERSION_FROM      => 'lib/Carp/Indeed.pm',
     PREREQ_PM         => {
+        'strict'          => 0,
         'Carp::Always'    => 0,
         'Test::More'      => 0,
     },
